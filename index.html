@@ -1,68 +1,54 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enzo Basañez - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- MENÚ DE NAVEGACIÓN (Inicio, Sobre mí, Proyectos, Contacto) -->
-    <header>
-        <nav>
-            <ul class="menu">
+<header>
+    <nav>
+        <!-- Logo o nombre a la izquierda (opcional) -->
+        <div class="logo">
+            <a href="index.html">ENZO</a>
+        </div>
+        
+        <!-- Botón de hamburguesa (3 rayitas) -->
+        <button class="hamburguesa" id="hamburguesa" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Menú desplegable (oculto por defecto) -->
+        <div class="menu-desplegable" id="menu-desplegable">
+            <!-- Links de navegación -->
+            <ul class="menu-links">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="sobremi.html">Sobre mi</a></li>
                 <li><a href="proyectos.html">Proyectos</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
-            <div class="menu-derecha">
-                <!-- SELECTOR DE IDIOMA -->
-                <select id="idioma">
+            
+            <!-- Selector de idioma -->
+            <div class="menu-item">
+                <label for="idioma-movil">Idioma:</label>
+                <select id="idioma-movil">
                     <option value="es">Español</option>
                     <option value="eu">Euskara</option>
                     <option value="en">English</option>
                 </select>
-                <!-- BOTÓN TEMA CLARO/OSCURO -->
-                <button id="cambiar-tema">🌙</button>
-                <!-- REDES SOCIALES -->
-                <div class="redes">
-                    <a href="https://linkedin.com/in/tu-perfil" target="_blank">LinkedIn</a>
-                    <a href="https://instagram.com/enzoo.bb" target="_blank">Instagram</a>
-                    <a href="https://youtube.com/enzobasa" target="_blank">YouTube</a>
+            </div>
+            
+            <!-- Botón tema claro/oscuro -->
+            <div class="menu-item">
+                <span>Tema:</span>
+                <button id="cambiar-tema-movil" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            
+            <!-- Redes sociales -->
+            <div class="menu-item redes-menu">
+                <span>Redes:</span>
+                <div class="redes-iconos">
+                    <a href="https://linkedin.com/in/tu-perfil" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com/tu-cuenta" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/tu-canal" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-        </nav>
-    </header>
-
-    <!-- SECCIÓN DE INICIO CON VIDEO/FOTO DE FONDO -->
-    <section class="inicio" id="inicio">
-        <!-- Video de fondo (cambia el src por tu archivo de video) -->
-        <video class="fondo-video" autoplay loop muted playsinline>
-            <source src="tu-video-de-fondo.mp4" type="video/mp4">
-            <!-- Si el video no carga, muestra una imagen -->
-            <img src="tu-imagen-de-fondo.jpg" alt="Fondo">
-        </video>
-        <div class="contenido-centrado">
-            <h1>ENZO BASAÑEZ</h1>
-            <p class="titulos">Realizador de Proyectos Audiovisuales y Espectáculos<br>Productor de Proyectos Audiovisuales y Espectáculos</p>
         </div>
-        <div class="scroll-indicator">↓</div>
-    </section>
-
-    <!-- PROYECTO DESTACADO (Aparece al hacer scroll) -->
-    <section class="proyecto-destacado" id="proyecto-destacado">
-        <h2>Proyecto Destacado</h2>
-        <div class="tarjeta-proyecto">
-            <a href="documental-birjaio.html">
-                <img src="portada-destacada.jpg" alt="Birjaio">
-                <h3>Birjaio</h3>
-                <p>Documental</p>
-            </a>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    </nav>
+</header>
