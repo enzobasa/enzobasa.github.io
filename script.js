@@ -1,22 +1,56 @@
-// Script para el cambio de tema (claro/oscuro) con Font Awesome
-const botonTema = document.getElementById('cambiar-tema');
-const body = document.body;
-const iconoTema = botonTema.querySelector('i'); // Selecciona el icono dentro del botón
+// ===== MENÚ HAMBURGUESA =====
+const hamburguesa = document.getElementById('hamburguesa');
+const menuDesplegable = document.getElementById('menu-desplegable');
 
-botonTema.addEventListener('click', () => {
-    body.classList.toggle('oscuro');
-    
-    // Cambiar el icono de Font Awesome según el tema
-    if (body.classList.contains('oscuro')) {
-        // Modo oscuro activado → mostramos SOL para cambiar a claro
-        iconoTema.className = 'fas fa-sun';
-    } else {
-        // Modo claro activado → mostramos LUNA para cambiar a oscuro
-        iconoTema.className = 'fas fa-moon';
-    }
+hamburguesa.addEventListener('click', () => {
+    hamburguesa.classList.toggle('activo');
+    menuDesplegable.classList.toggle('visible');
 });
 
-// Scroll suave al hacer clic en el indicador
+// Cerrar menú al hacer clic en un enlace
+const enlacesMenu = document.querySelectorAll('.menu-links a');
+enlacesMenu.forEach(enlace => {
+    enlace.addEventListener('click', () => {
+        hamburguesa.classList.remove('activo');
+        menuDesplegable.classList.remove('visible');
+    });
+});
+
+// ===== CAMBIO DE TEMA (claro/oscuro) =====
+const body = document.body;
+const botonTemaMovil = document.getElementById('cambiar-tema-movil');
+const iconoTemaMovil = botonTemaMovil.querySelector('i');
+
+// Función para actualizar el icono del tema
+function actualizarIconoTema() {
+    if (body.classList.contains('oscuro')) {
+        iconoTemaMovil.className = 'fas fa-sun';
+        if (botonTemaOriginal) botonTemaOriginal.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+        iconoTemaMovil.className = 'fas fa-moon';
+        if (botonTemaOriginal) botonTemaOriginal.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+}
+
+// Evento para cambiar tema desde el menú móvil
+botonTemaMovil.addEventListener('click', () => {
+    body.classList.toggle('oscuro');
+    actualizarIconoTema();
+});
+
+// También mantenemos el botón original si existe (para escritorio)
+const botonTemaOriginal = document.getElementById('cambiar-tema');
+if (botonTemaOriginal) {
+    botonTemaOriginal.addEventListener('click', () => {
+        body.classList.toggle('oscuro');
+        actualizarIconoTema();
+    });
+}
+
+// Inicializar icono del tema
+actualizarIconoTema();
+
+// ===== SCROLL SUAVE =====
 const scrollIndicator = document.querySelector('.scroll-indicator');
 if (scrollIndicator) {
     scrollIndicator.addEventListener('click', function() {
@@ -25,3 +59,14 @@ if (scrollIndicator) {
         });
     });
 }
+
+// ===== CERRAR MENÚ AL HACER CLIC FUERA =====
+document.addEventListener('click', (event) => {
+    const esHamburguesa = hamburguesa.contains(event.target);
+    const esMenu = menuDesplegable.contains(event.target);
+    
+    if (!esHamburguesa && !esMenu && menuDesplegable.classList.contains('visible')) {
+        hamburguesa.classList.remove('activo');
+        menuDesplegable.classList.remove('visible');
+    }
+});
