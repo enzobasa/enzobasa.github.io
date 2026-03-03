@@ -1,15 +1,18 @@
-// Script para el cambio de tema (claro/oscuro)
+// Script para el cambio de tema (claro/oscuro) con Font Awesome
 const botonTema = document.getElementById('cambiar-tema');
 const body = document.body;
+const iconoTema = botonTema.querySelector('i'); // Selecciona el icono dentro del botón
 
 botonTema.addEventListener('click', () => {
     body.classList.toggle('oscuro');
     
-    // Cambiar el icono del botón según el tema
+    // Cambiar el icono de Font Awesome según el tema
     if (body.classList.contains('oscuro')) {
-        botonTema.textContent = '☀️'; // Sol para tema oscuro (cambiar a claro)
+        // Modo oscuro activado → mostramos SOL para cambiar a claro
+        iconoTema.className = 'fas fa-sun';
     } else {
-        botonTema.textContent = '🌙'; // Luna para tema claro (cambiar a oscuro)
+        // Modo claro activado → mostramos LUNA para cambiar a oscuro
+        iconoTema.className = 'fas fa-moon';
     }
 });
 
