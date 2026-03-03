@@ -1,34 +1,166 @@
-/* AÑADE ESTO al final de tu archivo style.css */
-#cambiar-tema {
-    background: none;
-    border: 1px solid var(--texto);
+/* ===== MENÚ HAMBURGUESA ===== */
+.logo a {
+    text-decoration: none;
+    color: var(--menu-texto);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.hamburguesa {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 200;
+}
+
+.hamburguesa span {
+    width: 100%;
+    height: 3px;
+    background: var(--menu-texto);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Animación del botón hamburguesa cuando está activo */
+.hamburguesa.activo span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburguesa.activo span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburguesa.activo span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Menú desplegable */
+.menu-desplegable {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: var(--menu-fondo);
+    backdrop-filter: blur(10px);
+    padding: 80px 20px 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 150;
+    overflow-y: auto;
+}
+
+.menu-desplegable.visible {
+    right: 0;
+}
+
+/* Links del menú */
+.menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.menu-links li {
+    margin-bottom: 15px;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: var(--menu-texto);
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: opacity 0.3s;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu-links a:hover {
+    opacity: 0.7;
+    background: rgba(128, 128, 128, 0.1);
+}
+
+/* Elementos del menú (idioma, tema, redes) */
+.menu-item {
+    margin-bottom: 25px;
+    padding: 10px;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.menu-item span, .menu-item label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--menu-texto);
+    font-weight: bold;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+#idioma-movil {
+    width: 100%;
+    padding: 10px;
+    background: var(--fondo);
     color: var(--texto);
-    padding: 8px 12px;
-    border-radius: 30px; /* Más redondeado */
+    border: 1px solid var(--texto);
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#cambiar-tema-movil {
+    background: var(--fondo);
+    color: var(--texto);
+    border: 1px solid var(--texto);
+    border-radius: 30px;
     cursor: pointer;
     font-size: 1.2em;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    width: 40px;
-    height: 40px;
+    transition: all 0.3s;
 }
 
-#cambiar-tema:hover {
+#cambiar-tema-movil:hover {
     opacity: 0.7;
     transform: scale(1.05);
 }
 
-/* Asegurar que el icono herede el color del botón */
-#cambiar-tema i {
-    color: inherit;
-}
-/* Animación opcional para el cambio de tema */
-#cambiar-tema i {
-    transition: transform 0.5s ease;
+/* Redes sociales en el menú */
+.redes-menu .redes-iconos {
+    display: flex;
+    gap: 15px;
 }
 
-#cambiar-tema:active i {
-    transform: rotate(360deg);
+.redes-iconos a {
+    color: var(--menu-texto);
+    font-size: 1.5em;
+    transition: opacity 0.3s;
+}
+
+.redes-iconos a:hover {
+    opacity: 0.7;
+}
+
+/* Ocultar el menú original que tenías */
+.menu, .menu-derecha {
+    display: none;
+}
+
+/* Ajustar el header para el nuevo menú */
+header {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+nav {
+    justify-content: space-between;
+    align-items: center;
 }
