@@ -24,3 +24,11 @@
 #cambiar-tema i {
     color: inherit;
 }
+/* Animación opcional para el cambio de tema */
+#cambiar-tema i {
+    transition: transform 0.5s ease;
+}
+
+#cambiar-tema:active i {
+    transform: rotate(360deg);
+}
