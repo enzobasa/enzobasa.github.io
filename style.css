@@ -1,19 +1,39 @@
-/* Estilos Generales */
+/* ===== VARIABLES GLOBALES (colores según tema) ===== */
+:root {
+    /* Tema claro (por defecto) */
+    --fondo: #ffffff;
+    --texto: #000000;
+    --menu-fondo: rgba(255, 255, 255, 0.95);
+    --menu-texto: #000000;
+}
+
+/* Tema oscuro - se activa con la clase "oscuro" en el body */
+body.oscuro {
+    --fondo: #1a1a1a;
+    --texto: #ffffff;
+    --menu-fondo: rgba(0, 0, 0, 0.95);
+    --menu-texto: #ffffff;
+}
+
+/* ===== ESTILOS GENERALES ===== */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Menú de Navegación */
+/* ===== MENÚ DE NAVEGACIÓN ===== */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--menu-fondo);
     z-index: 100;
     padding: 10px 20px;
+    box-sizing: border-box;
 }
 
 nav {
@@ -32,8 +52,13 @@ nav {
 
 .menu a {
     text-decoration: none;
-    color: black;
+    color: var(--menu-texto);
     font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.menu a:hover {
+    opacity: 0.7;
 }
 
 .menu-derecha {
@@ -42,7 +67,43 @@ nav {
     align-items: center;
 }
 
-/* Sección Inicio con Video */
+/* Selector de idioma */
+#idioma {
+    padding: 5px;
+    background: var(--fondo);
+    color: var(--texto);
+    border: 1px solid var(--texto);
+    border-radius: 4px;
+}
+
+/* Botón de tema */
+#cambiar-tema {
+    background: none;
+    border: 1px solid var(--texto);
+    color: var(--texto);
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+#cambiar-tema:hover {
+    opacity: 0.7;
+}
+
+/* Redes sociales */
+.redes a {
+    color: var(--menu-texto);
+    text-decoration: none;
+    margin-left: 10px;
+    transition: opacity 0.3s;
+}
+
+.redes a:hover {
+    opacity: 0.7;
+}
+
+/* ===== SECCIÓN INICIO CON VIDEO ===== */
 .inicio {
     height: 100vh;
     position: relative;
@@ -50,7 +111,6 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
     overflow: hidden;
 }
 
@@ -64,15 +124,21 @@ nav {
     z-index: -1;
 }
 
+/* Para que el texto sea legible sobre el video, independientemente del tema */
+.contenido-centrado {
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    color: white; /* El texto sobre el video siempre será blanco para contrastar */
+}
+
 .contenido-centrado h1 {
     font-size: 4em;
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .contenido-centrado p {
     font-size: 1.2em;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .scroll-indicator {
@@ -80,6 +146,9 @@ nav {
     bottom: 20px;
     font-size: 2em;
     animation: bounce 2s infinite;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    cursor: pointer;
 }
 
 @keyframes bounce {
@@ -88,7 +157,7 @@ nav {
     60% {transform: translateY(-15px);}
 }
 
-/* Proyecto Destacado */
+/* ===== PROYECTO DESTACADO ===== */
 .proyecto-destacado {
     min-height: 100vh;
     padding: 80px 20px;
@@ -96,13 +165,24 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: var(--fondo);
+    color: var(--texto);
+}
+
+.proyecto-destacado h2 {
+    color: var(--texto);
+    margin-bottom: 40px;
 }
 
 .tarjeta-proyecto a {
     text-decoration: none;
-    color: inherit;
+    color: var(--texto);
     display: block;
     transition: transform 0.3s;
+}
+
+.tarjeta-proyecto a:hover {
+    transform: scale(1.02);
 }
 
 .tarjeta-proyecto img {
@@ -117,26 +197,117 @@ nav {
     filter: grayscale(0%);
 }
 
+.tarjeta-proyecto p {
+    display: none;
+    text-align: center;
+    margin: 10px 0 0;
+    color: var(--texto);
+}
+
 .tarjeta-proyecto a:hover p {
     display: block;
 }
 
-.tarjeta-proyecto p {
-    display: none;
+/* ===== PÁGINAS DE PROYECTOS (cuadrícula) ===== */
+.pagina-proyectos {
+    padding: 100px 20px 40px;
+    min-height: 100vh;
+    background-color: var(--fondo);
+    color: var(--texto);
+}
+
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== PÁGINA INDIVIDUAL DE PROYECTO ===== */
+.pagina-proyecto-individual {
+    min-height: 100vh;
+    background-color: var(--fondo);
+    color: var(--texto);
+}
+
+.hero-proyecto {
+    height: 70vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin: 5px 0 0;
-}
-
-/* Tema Oscuro */
-body.oscuro {
-    background-color: #222;
     color: white;
+    overflow: hidden;
 }
 
-body.oscuro header {
-    background: rgba(0, 0, 0, 0.9);
+.fondo-proyecto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.6);
 }
 
-body.oscuro .menu a {
+.hero-proyecto h1 {
+    font-size: 5em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-proyecto .genero {
+    font-size: 1.5em;
+    margin: 10px 0 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.botones-hero {
+    display: flex;
+    gap: 20px;
+}
+
+.boton {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: opacity 0.3s;
+    background-color: rgba(255,255,255,0.2);
     color: white;
+    border: 2px solid white;
+    backdrop-filter: blur(5px);
+}
+
+.boton:hover {
+    opacity: 0.8;
+    background-color: rgba(255,255,255,0.3);
+}
+
+.contenido-proyecto {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+    color: var(--texto);
+}
+
+.boton-volver {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: var(--texto);
+    color: var(--fondo);
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid var(--texto);
+    transition: all 0.3s;
+}
+
+.boton-volver:hover {
+    background-color: var(--fondo);
+    color: var(--texto);
 }
