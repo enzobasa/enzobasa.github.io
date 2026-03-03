@@ -1,85 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ENZO BASAÑEZ</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f4f4;
-    color: #333;
-    text-align: center;
-}
-header {
-    background: #111;
-    color: white;
-    padding: 60px 20px;
-}
-section {
-    padding: 40px 20px;
-}
-.card {
-    background: white;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-a {
-    color: #0077ff;
-    text-decoration: none;
-    font-weight: bold;
-}
-footer {
-    background: #111;
-    color: white;
-    padding: 20px;
-    margin-top: 40px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enzo Basañez - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-<h1>ENZO BASAÑEZ</h1>
-<p>Realizador de Proyectos Audiovisuales y Espectáculos</p>
-<p>Productor de Proyectos Audiovisuales y Espectáculos</p>
-</header>
+    <!-- MENÚ DE NAVEGACIÓN (Inicio, Sobre mí, Proyectos, Contacto) -->
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobremi.html">Sobre mi</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="menu-derecha">
+                <!-- SELECTOR DE IDIOMA -->
+                <select id="idioma">
+                    <option value="es">Español</option>
+                    <option value="eu">Euskara</option>
+                    <option value="en">English</option>
+                </select>
+                <!-- BOTÓN TEMA CLARO/OSCURO -->
+                <button id="cambiar-tema">🌙</button>
+                <!-- REDES SOCIALES -->
+                <div class="redes">
+                    <a href="https://linkedin.com/in/tu-perfil" target="_blank">LinkedIn</a>
+                    <a href="https://instagram.com/tu-cuenta" target="_blank">Instagram</a>
+                    <a href="https://youtube.com/tu-canal" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<section>
-<h2>Sobre mí</h2>
-<p>Aquí escribes una pequeña descripción sobre ti.</p>
-</section>
+    <!-- SECCIÓN DE INICIO CON VIDEO/FOTO DE FONDO -->
+    <section class="inicio" id="inicio">
+        <!-- Video de fondo (cambia el src por tu archivo de video) -->
+        <video class="fondo-video" autoplay loop muted playsinline>
+            <source src="tu-video-de-fondo.mp4" type="video/mp4">
+            <!-- Si el video no carga, muestra una imagen -->
+            <img src="tu-imagen-de-fondo.jpg" alt="Fondo">
+        </video>
+        <div class="contenido-centrado">
+            <h1>ENZO BASAÑEZ</h1>
+            <p class="titulos">Realizador de Proyectos Audiovisuales y Espectáculos<br>Productor de Proyectos Audiovisuales y Espectáculos</p>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
 
-<section>
-<h2>Proyectos</h2>
+    <!-- PROYECTO DESTACADO (Aparece al hacer scroll) -->
+    <section class="proyecto-destacado" id="proyecto-destacado">
+        <h2>Proyecto Destacado</h2>
+        <div class="tarjeta-proyecto">
+            <a href="documental-birjaio.html">
+                <img src="portada-destacada.jpg" alt="Birjaio">
+                <h3>Birjaio</h3>
+                <p>Documental</p>
+            </a>
+        </div>
+    </section>
 
-<div class="card">
-<h3>Proyecto 1</h3>
-<p>Descripción corta del proyecto.</p>
-<a href="#">Ver más</a>
-</div>
-
-<div class="card">
-<h3>Proyecto 2</h3>
-<p>Descripción corta del proyecto.</p>
-<a href="#">Ver más</a>
-</div>
-
-</section>
-
-<section>
-<h2>Contacto</h2>
-<p>Email: tuemail@gmail.com</p>
-<p>LinkedIn: <a href="#">Tu LinkedIn</a></p>
-</section>
-
-<footer>
-<p>© Enzo Basañez 2026. Todos los derechos reservados.</p>
-</footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
