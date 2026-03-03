@@ -4,17 +4,21 @@ const body = document.body;
 
 botonTema.addEventListener('click', () => {
     body.classList.toggle('oscuro');
+    
+    // Cambiar el icono del botón según el tema
     if (body.classList.contains('oscuro')) {
-        botonTema.textContent = '☀️';
+        botonTema.textContent = '☀️'; // Sol para tema oscuro (cambiar a claro)
     } else {
-        botonTema.textContent = '🌙';
+        botonTema.textContent = '🌙'; // Luna para tema claro (cambiar a oscuro)
     }
 });
 
-// Aquí puedes añadir después el código para el cambio de idioma
-// (eso lo haremos más adelante cuando tengamos más contenido)
-
-// Script para el scroll suave al hacer clic en el indicador
-document.querySelector('.scroll-indicator').addEventListener('click', function() {
-    document.getElementById('proyecto-destacado').scrollIntoView({ behavior: 'smooth' });
-});
+// Scroll suave al hacer clic en el indicador
+const scrollIndicator = document.querySelector('.scroll-indicator');
+if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', function() {
+        document.getElementById('proyecto-destacado').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    });
+}
