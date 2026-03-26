@@ -8,69 +8,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="index.html" class="active">Inicio</a>
-                <a href="#proyectos">Proyectos</a>
-                <a href="#sobre-mi">Sobre mi</a>
-                <a href="#contacto">Contacto</a>
-            </div>
-            <div class="nav-right">
-                <div class="social-links">
+    <!-- Menú hamburguesa -->
+    <div class="menu-container">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="mobile-menu" id="mobile-menu">
+            <div class="menu-content">
+                <a href="#inicio" class="menu-link">Inicio</a>
+                <a href="#proyectos" class="menu-link">Proyectos</a>
+                <a href="#sobre-mi" class="menu-link">Sobre mi</a>
+                <a href="#contacto" class="menu-link">Contacto</a>
+                <div class="menu-social">
                     <a href="#" target="_blank">LinkedIn</a>
                     <a href="#" target="_blank">Instagram</a>
                     <a href="#" target="_blank">YouTube</a>
                 </div>
-                <div class="lang-switch">
+                <div class="menu-lang">
                     <a href="index.html" class="active">Esp</a>
                     <span>/</span>
                     <a href="en/index.html">Eng</a>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 
     <main>
-        <section class="hero">
+        <!-- Sección Inicio/Hero -->
+        <section id="inicio" class="hero">
             <div class="hero-content">
                 <h1 class="name">ENZO B</h1>
                 <p class="title">FILMMAKER</p>
             </div>
         </section>
 
+        <!-- Sección Proyectos (solo UNO) -->
         <section id="proyectos" class="projects">
             <div class="container">
                 <h2 class="section-title">Proyectos</h2>
                 <div class="projects-grid">
-                    <!-- Proyecto 1 -->
-                    <div class="project-card">
+                    <div class="project-card" onclick="location.href='proyecto1.html'">
                         <div class="project-image">
-                            <img src="images/project1.jpg" alt="Proyecto 1">
+                            <img src="images/proyecto1.jpg" alt="Mi proyecto">
                         </div>
-                        <h3>Nombre del Proyecto</h3>
-                        <p>Breve descripción del proyecto y tu rol en él.</p>
-                    </div>
-                    <!-- Proyecto 2 -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/project2.jpg" alt="Proyecto 2">
-                        </div>
-                        <h3>Nombre del Proyecto</h3>
-                        <p>Breve descripción del proyecto y tu rol en él.</p>
-                    </div>
-                    <!-- Proyecto 3 -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/project3.jpg" alt="Proyecto 3">
-                        </div>
-                        <h3>Nombre del Proyecto</h3>
-                        <p>Breve descripción del proyecto y tu rol en él.</p>
+                        <h3>Nombre de mi proyecto</h3>
+                        <p>Haz clic para ver toda la información de este proyecto.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Sección Sobre mi -->
         <section id="sobre-mi" class="about">
             <div class="container">
                 <h2 class="section-title">Sobre mi</h2>
@@ -83,6 +73,7 @@
             </div>
         </section>
 
+        <!-- Sección Contacto -->
         <section id="contacto" class="contact">
             <div class="container">
                 <h2 class="section-title">Contacto</h2>
