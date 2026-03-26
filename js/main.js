@@ -1,8 +1,27 @@
-// Smooth scrolling for anchor links
+// ========== MENÚ HAMBURGUESA ==========
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+});
+
+// Cerrar menú al hacer clic en un enlace
+const menuLinks = document.querySelectorAll('.menu-link');
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+    });
+});
+
+// ========== SCROLL SUAVE PARA LOS ENLACES ==========
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
         if (target) {
             target.scrollIntoView({
                 behavior: 'smooth',
@@ -12,9 +31,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Active link highlighting on scroll
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-links a');
+// ========== ACTIVE LINK HIGHLIGHTING (SOLO para Inicio, Proyectos y Contacto) ==========
+const sections = document.querySelectorAll('#inicio, #proyectos, #contacto');
+const navLinks = document.querySelectorAll('.menu-link');
 
 window.addEventListener('scroll', () => {
     let current = '';
