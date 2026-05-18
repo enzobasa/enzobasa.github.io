@@ -4,53 +4,184 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre mí - Enzo Basañez</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* MENÚ HAMBURGUESA */
+        .menu-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2000;
+        }
+
+        .hamburger {
+            width: 30px;
+            height: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 2001;
+            position: relative;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: #000000;
+            transition: right 0.4s ease;
+            z-index: 1999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .menu-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .menu-link {
+            color: white;
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .menu-link:hover {
+            opacity: 0.7;
+        }
+
+        /* CONTENEDOR SOBRE MÍ */
+        .sobremi-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 120px 5% 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        .sobremi-texto {
+            flex: 1;
+            padding-right: 30px;
+        }
+
+        .sobremi-texto h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .sobremi-texto p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #cccccc;
+        }
+
+        .sobremi-texto ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .sobremi-texto li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        .sobremi-imagen {
+            flex: 1;
+        }
+
+        .sobremi-imagen img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .sobremi-container {
+                flex-direction: column;
+                padding: 100px 5% 60px;
+            }
+            .sobremi-texto {
+                padding-right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-link {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html">ENZO</a>
+    <div class="menu-container">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="menu-content">
+                <a href="index.html" class="menu-link">Inicio</a>
+                <a href="sobremi.html" class="menu-link">Sobre mi</a>
+                <a href="proyectos.html" class="menu-link">Proyectos</a>
+                <a href="contacto.html" class="menu-link">Contacto</a>
             </div>
-            <button class="hamburguesa" id="hamburguesa" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="menu-desplegable" id="menu-desplegable">
-                <ul class="menu-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="sobremi.html">Sobre mi</a></li>
-                    <li><a href="proyectos.html">Proyectos</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-                <div class="menu-item">
-                    <label>Idioma:</label>
-                    <select id="idioma-movil">
-                        <option value="es">Español</option>
-                        <option value="eu">Euskara</option>
-                        <option value="en">English</option>
-                    </select>
-                </div>
-                <div class="menu-item">
-                    <span>Tema:</span>
-                    <button id="cambiar-tema-movil"><i class="fas fa-moon"></i></button>
-                </div>
-                <div class="menu-item redes-menu">
-                    <span>Redes:</span>
-                    <div class="redes-iconos">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+        </div>
+    </div>
 
-    <main class="sobremi-container">
+    <div class="sobremi-container">
         <div class="sobremi-texto">
             <h1>Sobre mí</h1>
             <p>Aquí escribe tu biografía completa. Cuéntame quién eres, qué haces, tu experiencia, estudios, etc.</p>
@@ -66,8 +197,19 @@
         <div class="sobremi-imagen">
             <img src="images/sobre-mi.jpg" alt="Enzo Basañez">
         </div>
-    </main>
+    </div>
 
-    <script src="js/main.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (hamburger && mobileMenu) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        }
+    </script>
+
 </body>
 </html>
