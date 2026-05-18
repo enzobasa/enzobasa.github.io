@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - Enzo Basañez</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">ENZO</a>
+            </div>
+            <button class="hamburguesa" id="hamburguesa" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="menu-desplegable" id="menu-desplegable">
+                <ul class="menu-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sobremi.html">Sobre mi</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="menu-item">
+                    <label>Idioma:</label>
+                    <select id="idioma-movil">
+                        <option value="es">Español</option>
+                        <option value="eu">Euskara</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+                <div class="menu-item">
+                    <span>Tema:</span>
+                    <button id="cambiar-tema-movil"><i class="fas fa-moon"></i></button>
+                </div>
+                <div class="menu-item redes-menu">
+                    <span>Redes:</span>
+                    <div class="redes-iconos">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- PÁGINA DE PROYECTOS (TODOS) -->
+    <main class="pagina-proyectos">
+        <h1>Todos mis proyectos</h1>
+        <div class="grid-proyectos">
+            <!-- Proyecto 1 -->
+            <a href="proyecto1.html" class="proyecto-card">
+                <img src="images/proyecto1.jpg" alt="Birjaio">
+                <h3>Birjaio</h3>
+                <p>Documental</p>
+            </a>
+            <!-- Proyecto 2 -->
+            <a href="#" class="proyecto-card">
+                <img src="images/proyecto2.jpg" alt="Proyecto 2">
+                <h3>Test Proyecto 1</h3>
+                <p>Ficción</p>
+            </a>
+            <!-- Proyecto 3 -->
+            <a href="#" class="proyecto-card">
+                <img src="images/proyecto3.jpg" alt="Proyecto 3">
+                <h3>Cat2ES</h3>
+                <p>Experimental</p>
+            </a>
+            <!-- AÑADE MÁS PROYECTOS COPIANDO ESTE FORMATO -->
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
