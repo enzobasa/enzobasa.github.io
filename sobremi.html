@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOBRE MI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">ENZO</a>
+            </div>
+            <button class="hamburguesa" id="hamburguesa" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="menu-desplegable" id="menu-desplegable">
+                <ul class="menu-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sobremi.html">Sobre mi</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="menu-item">
+                    <label>Idioma:</label>
+                    <select id="idioma-movil">
+                        <option value="es">Español</option>
+                        <option value="eu">Euskara</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+                <div class="menu-item">
+                    <span>Tema:</span>
+                    <button id="cambiar-tema-movil"><i class="fas fa-moon"></i></button>
+                </div>
+                <div class="menu-item redes-menu">
+                    <span>Redes:</span>
+                    <div class="redes-iconos">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- PÁGINA SOBRE MÍ: TEXTO + IMAGEN -->
+    <main class="sobremi-container">
+        <div class="sobremi-texto">
+            <h1>SOBRE MI</h1>
+            <p>Desde bien pequeño me ha gustado el mundo audiovisual. Siempre he sido muy <strong>chupacámaras</strong> y, aunque no he tenido oportunidad de tener mucho material (<em>por no decir nada</em>), siempre que podía le cogía la cámara digital a mi ama para grabarme a mí o al resto (<em>más a mí que al resto jejeje</em>).</p>
+            <p>Siempre había tenido curiosidad por saber cómo se hacían las cosas en este mundo, así que nada más terminar bachiller me puse a estudiar. Gracias a eso ahora tengo dos títulos: <strong>Producción de Proyectos Audiovisuales y Espectáculos</strong> y <strong>Realización de Proyectos Audiovisuales y Espectáculos</strong>.</p>
+            <p>Aunque ya sé cómo funciona todo detrás de la pantalla o el telón, aún me sigo quedando embobado viendo las luces en los conciertos. Me gusta mucho este sector porque nunca dejo de aprender y de descubrir cosas nuevas en cada proyecto.</p>
+
+            <ul>
+                <li>Experiencia en rodajes</li>
+                <li>Festivales donde has participado</li>
+                <li>Colaboraciones</li>
+            </ul>
+        </div>
+        <div class="sobremi-imagen">
+            <img src="images/sobre-mi.jpg" alt="Enzo Basañez">
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
