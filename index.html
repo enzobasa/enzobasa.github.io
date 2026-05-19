@@ -1,4 +1,11 @@
-        /* Estilos específicos para móvil que aseguran que funcione */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ENZO BASAÑEZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -12,76 +19,26 @@
             color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
-            width: 100%;
         }
 
-        /* Hero section optimizada para móvil */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 1rem;
-            position: relative;
-            background-image: url('/images/fondo.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            width: 100%;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            padding: 0 1rem;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(2rem, 8vw, 5rem);
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.5rem;
-            word-break: break-word;
-        }
-
-        .hero-content p {
-            font-size: clamp(0.8rem, 4vw, 1.2rem);
-            opacity: 0.9;
-            letter-spacing: 0.05em;
-            word-break: break-word;
-        }
-
-        /* Menú hamburguesa móvil */
+        /* ===== MENÚ HAMBURGUESA ===== */
         .menu-container {
             position: fixed;
-            top: 15px;
-            right: 15px;
+            top: 20px;
+            right: 20px;
             z-index: 2000;
         }
 
         .hamburger {
             width: 35px;
-            height: 25px;
+            height: 28px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             cursor: pointer;
             z-index: 2001;
             position: relative;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.6);
             padding: 8px;
             border-radius: 8px;
         }
@@ -91,14 +48,17 @@
             height: 2px;
             background-color: white;
             transition: all 0.3s ease;
+            border-radius: 2px;
         }
 
+        /* Animación de la X (cuando está activo) */
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(6px, 6px);
         }
 
         .hamburger.active span:nth-child(2) {
             opacity: 0;
+            transform: scaleX(0);
         }
 
         .hamburger.active span:nth-child(3) {
@@ -109,8 +69,7 @@
             position: fixed;
             top: 0;
             right: -100%;
-            width: 85%;
-            max-width: 300px;
+            width: 280px;
             height: 100vh;
             background-color: rgba(0, 0, 0, 0.95);
             transition: right 0.3s ease;
@@ -129,14 +88,14 @@
             text-align: center;
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.8rem;
             padding: 2rem;
         }
 
         .menu-link {
             color: white;
             text-decoration: none;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 500;
             transition: opacity 0.3s;
             padding: 0.5rem;
@@ -146,22 +105,102 @@
             opacity: 0.7;
         }
 
-        /* Proyecto destacado móvil */
+        .menu-social {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .menu-social a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .menu-lang {
+            display: flex;
+            gap: 0.3rem;
+            justify-content: center;
+        }
+
+        .menu-lang a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu-lang a.active {
+            opacity: 1;
+            font-weight: bold;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            background-image: url('/images/fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 90%;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
+            opacity: 0.9;
+            letter-spacing: 0.05em;
+            line-height: 1.4;
+        }
+
+        /* ===== PROYECTO DESTACADO ===== */
         .projects {
-            padding: 3rem 1rem;
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .section-title {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             text-align: center;
             margin-bottom: 2rem;
+            letter-spacing: 0.1em;
         }
 
         .projects-grid {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
         }
 
         .project-card {
@@ -169,9 +208,14 @@
             border-radius: 12px;
             overflow: hidden;
             cursor: pointer;
-            max-width: 400px;
+            max-width: 500px;
             width: 100%;
             margin: 0 auto;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
         }
 
         .project-image {
@@ -188,70 +232,138 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
         }
 
         .project-card h3 {
-            padding: 1rem;
-            font-size: 1.2rem;
+            padding: 1.2rem 1.2rem 0.5rem;
+            font-size: 1.3rem;
             text-align: center;
         }
 
         .project-card p {
-            padding: 0 1rem 1rem;
+            padding: 0 1.2rem 1.5rem;
             color: #cccccc;
             font-size: 0.9rem;
             text-align: center;
         }
 
-        /* Contacto móvil */
+        /* ===== CONTACTO ===== */
         .contact {
-            padding: 3rem 1rem;
+            padding: 4rem 2rem;
         }
 
         .contact-info {
             text-align: center;
         }
 
+        .contact-info p {
+            margin-bottom: 1rem;
+        }
+
         .email-link {
             display: inline-block;
-            font-size: 1rem;
+            font-size: 1.2rem;
             color: white;
             text-decoration: none;
             margin: 1rem 0;
-            word-break: break-all;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 0.2rem;
         }
 
-        /* Footer */
+        .email-link:hover {
+            border-bottom-color: white;
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .contact-social a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+
+        .contact-social a:hover {
+            opacity: 1;
+        }
+
+        /* ===== FOOTER ===== */
         footer {
             text-align: center;
-            padding: 1.5rem;
-            font-size: 0.7rem;
+            padding: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
             opacity: 0.6;
         }
 
-        /* Scroll indicator */
-        .scroll-indicator {
-            display: none;
-        }
-
-        /* Ajustes móviles */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2rem;
+        /* ===== RESPONSIVE ===== */
+        @media (min-width: 769px) {
+            .hamburger {
+                width: 40px;
+                height: 30px;
             }
             
-            .hero-content p {
-                font-size: 0.8rem;
+            .hamburger span {
+                height: 3px;
+            }
+            
+            .menu-link {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-container {
+                top: 15px;
+                right: 15px;
             }
             
             .hamburger {
                 width: 30px;
-                height: 22px;
+                height: 24px;
                 padding: 6px;
             }
             
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+            
             .menu-link {
+                font-size: 1.2rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .project-card h3 {
                 font-size: 1.1rem;
+            }
+            
+            .email-link {
+                font-size: 0.9rem;
+                word-break: break-all;
             }
         }
     </style>
@@ -284,15 +396,14 @@
     </div>
 
     <main>
-        <!-- Sección Inicio/Hero -->
-        <section id="inicio" class="hero">
+        <section class="hero">
             <div class="hero-content">
-                <h1 class="name">ENZO BASAÑEZ</h1>
+                <h1>ENZO BASAÑEZ</h1>
+                <p>PRODUCTOR/REALIZADOR DE PROYECTOS AUDIOVISUALES Y ESPECTÁCULOS</p>
             </div>
         </section>
 
-        <!-- Sección Proyecto Destacado -->
-        <section id="proyectos" class="projects">
+        <section class="projects">
             <div class="container">
                 <h2 class="section-title">PROYECTO DESTACADO</h2>
                 <div class="projects-grid">
@@ -307,8 +418,7 @@
             </div>
         </section>
 
-        <!-- Sección Contacto -->
-        <section id="contacto" class="contact">
+        <section class="contact">
             <div class="container">
                 <h2 class="section-title">CONTACTO</h2>
                 <div class="contact-info">
@@ -330,45 +440,48 @@
     </footer>
 
     <script>
-        // Menú hamburguesa
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobile-menu');
         
         if (hamburger && mobileMenu) {
+            // Abrir/cerrar menú
             hamburger.addEventListener('click', function(e) {
                 e.stopPropagation();
                 hamburger.classList.toggle('active');
                 mobileMenu.classList.toggle('active');
-                // Evitar scroll del body cuando el menú está abierto
+                
+                // Evitar scroll del body
                 if (mobileMenu.classList.contains('active')) {
                     document.body.style.overflow = 'hidden';
                 } else {
                     document.body.style.overflow = '';
                 }
             });
-        }
 
-        // Cerrar menú al hacer clic en un enlace
-        const menuLinks = document.querySelectorAll('.menu-link');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
+            // Cerrar menú al hacer clic en un enlace
+            const menuLinks = document.querySelectorAll('.menu-link');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
             });
-        });
 
-        // Cerrar menú al hacer clic fuera
-        document.addEventListener('click', function(event) {
-            const isClickInsideMenu = mobileMenu && mobileMenu.contains(event.target);
-            const isClickOnHamburger = hamburger && hamburger.contains(event.target);
-            
-            if (mobileMenu && mobileMenu.classList.contains('active') && !isClickInsideMenu && !isClickOnHamburger) {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
+            // Cerrar menú al hacer clic fuera
+            document.addEventListener('click', function(event) {
+                if (mobileMenu.classList.contains('active')) {
+                    const isClickInsideMenu = mobileMenu.contains(event.target);
+                    const isClickOnHamburger = hamburger.contains(event.target);
+                    
+                    if (!isClickInsideMenu && !isClickOnHamburger) {
+                        hamburger.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                }
+            });
+        }
     </script>
 </body>
 </html>
