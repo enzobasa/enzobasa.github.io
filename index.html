@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>ENZO BASAÑEZ</title>
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Estilos específicos para móvil que aseguran que funcione */
         * {
             margin: 0;
             padding: 0;
@@ -19,140 +21,23 @@
             color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
-        }
-
-        /* ===== MENÚ HAMBURGUESA - BOTÓN EN DERECHA, MENÚ PANTALLA COMPLETA ===== */
-        .menu-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 2000;
-        }
-
-        .hamburger {
-            width: 35px;
-            height: 28px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            cursor: pointer;
-            z-index: 2001;
-            position: relative;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 8px;
-            border-radius: 8px;
-        }
-
-        .hamburger span {
             width: 100%;
-            height: 2px;
-            background-color: white;
-            transition: all 0.3s ease;
-            border-radius: 2px;
         }
 
-        /* Animación de la X */
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-            transform: scaleX(0);
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
-        }
-
-        /* Menú de PANTALLA COMPLETA */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.98);
-            transition: all 0.4s ease;
-            z-index: 1999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            backdrop-filter: blur(10px);
-        }
-
-        .mobile-menu.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .menu-content {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            padding: 2rem;
-        }
-
-        .menu-link {
-            color: white;
-            text-decoration: none;
-            font-size: 2rem;
-            font-weight: 500;
-            transition: opacity 0.3s;
-            padding: 0.5rem;
-        }
-
-        .menu-link:hover {
-            opacity: 0.7;
-        }
-
-        .menu-social {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
-
-        .menu-social a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-
-        .menu-lang {
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .menu-lang a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-
-        .menu-lang a.active {
-            opacity: 1;
-            font-weight: bold;
-        }
-
-        /* ===== HERO SECTION ===== */
+        /* Hero section optimizada para móvil */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 2rem;
+            padding: 1rem;
             position: relative;
             background-image: url('/images/fondo.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            width: 100%;
         }
 
         .hero::before {
@@ -169,43 +54,123 @@
         .hero-content {
             position: relative;
             z-index: 2;
+            width: 100%;
+            padding: 0 1rem;
         }
 
         .hero-content h1 {
-            font-size: clamp(2rem, 6vw, 5rem);
+            font-size: clamp(2rem, 8vw, 5rem);
             font-weight: 700;
             letter-spacing: 0.1em;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+            word-break: break-word;
         }
 
         .hero-content p {
-            font-size: clamp(0.8rem, 3vw, 1.2rem);
+            font-size: clamp(0.8rem, 4vw, 1.2rem);
             opacity: 0.9;
             letter-spacing: 0.05em;
-            line-height: 1.4;
+            word-break: break-word;
         }
 
-        /* ===== PROYECTO DESTACADO ===== */
+        /* Menú hamburguesa móvil */
+        .menu-container {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            z-index: 2000;
+        }
+
+        .hamburger {
+            width: 35px;
+            height: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 2001;
+            position: relative;
+            background: rgba(0,0,0,0.5);
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            max-width: 300px;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.95);
+            transition: right 0.3s ease;
+            z-index: 1999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .menu-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .menu-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            padding: 0.5rem;
+        }
+
+        .menu-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Proyecto destacado móvil */
         .projects {
-            padding: 4rem 2rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 3rem 1rem;
         }
 
         .section-title {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             text-align: center;
             margin-bottom: 2rem;
-            letter-spacing: 0.1em;
         }
 
         .projects-grid {
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
         }
 
         .project-card {
@@ -213,14 +178,9 @@
             border-radius: 12px;
             overflow: hidden;
             cursor: pointer;
-            max-width: 500px;
+            max-width: 400px;
             width: 100%;
             margin: 0 auto;
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
         }
 
         .project-image {
@@ -237,125 +197,76 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
         }
 
         .project-card h3 {
-            padding: 1.2rem 1.2rem 0.5rem;
-            font-size: 1.3rem;
+            padding: 1rem;
+            font-size: 1.2rem;
             text-align: center;
         }
 
         .project-card p {
-            padding: 0 1.2rem 1.5rem;
+            padding: 0 1rem 1rem;
             color: #cccccc;
             font-size: 0.9rem;
             text-align: center;
         }
 
-        /* ===== CONTACTO ===== */
+        /* Contacto móvil */
         .contact {
-            padding: 4rem 2rem;
+            padding: 3rem 1rem;
         }
 
         .contact-info {
             text-align: center;
         }
 
-        .contact-info p {
-            margin-bottom: 1rem;
-        }
-
         .email-link {
             display: inline-block;
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: white;
             text-decoration: none;
             margin: 1rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-            padding-bottom: 0.2rem;
+            word-break: break-all;
         }
 
-        .email-link:hover {
-            border-bottom-color: white;
-        }
-
-        .contact-social {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
-
-        .contact-social a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.7;
-        }
-
-        .contact-social a:hover {
-            opacity: 1;
-        }
-
-        /* ===== FOOTER ===== */
+        /* Footer */
         footer {
             text-align: center;
-            padding: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.8rem;
+            padding: 1.5rem;
+            font-size: 0.7rem;
             opacity: 0.6;
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* Scroll indicator */
+        .scroll-indicator {
+            display: none;
+        }
+
+        /* Ajustes móviles */
         @media (max-width: 768px) {
-            .menu-container {
-                top: 15px;
-                right: 15px;
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 0.8rem;
             }
             
             .hamburger {
                 width: 30px;
-                height: 24px;
+                height: 22px;
                 padding: 6px;
             }
             
-            .hamburger span {
-                height: 2px;
-            }
-            
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-            
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -5px);
-            }
-            
             .menu-link {
-                font-size: 1.5rem;
-            }
-            
-            .hero-content h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title {
-                font-size: 1.3rem;
-            }
-            
-            .email-link {
-                font-size: 0.9rem;
-                word-break: break-all;
+                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Menú hamburguesa - Botón en derecha, menú pantalla completa -->
+    <!-- Menú hamburguesa -->
     <div class="menu-container">
         <div class="hamburger" id="hamburger">
             <span></span>
@@ -382,14 +293,16 @@
     </div>
 
     <main>
-        <section class="hero">
+        <!-- Sección Inicio/Hero -->
+        <section id="inicio" class="hero">
             <div class="hero-content">
-                <h1>ENZO BASAÑEZ</h1>
-                <p>PRODUCTOR/REALIZADOR DE PROYECTOS AUDIOVISUALES Y ESPECTÁCULOS</p>
+                <h1 class="name">ENZO BASAÑEZ</h1>
+                <p class="title">PRODUCTOR/REALIZADOR<br>DE PROYECTOS AUDIOVISUALES Y ESPECTÁCULOS</p>
             </div>
         </section>
 
-        <section class="projects">
+        <!-- Sección Proyecto Destacado -->
+        <section id="proyectos" class="projects">
             <div class="container">
                 <h2 class="section-title">PROYECTO DESTACADO</h2>
                 <div class="projects-grid">
@@ -404,7 +317,8 @@
             </div>
         </section>
 
-        <section class="contact">
+        <!-- Sección Contacto -->
+        <section id="contacto" class="contact">
             <div class="container">
                 <h2 class="section-title">CONTACTO</h2>
                 <div class="contact-info">
@@ -426,6 +340,7 @@
     </footer>
 
     <script>
+        // Menú hamburguesa
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobile-menu');
         
@@ -434,36 +349,36 @@
                 e.stopPropagation();
                 hamburger.classList.toggle('active');
                 mobileMenu.classList.toggle('active');
-                
+                // Evitar scroll del body cuando el menú está abierto
                 if (mobileMenu.classList.contains('active')) {
                     document.body.style.overflow = 'hidden';
                 } else {
                     document.body.style.overflow = '';
                 }
             });
-
-            const menuLinks = document.querySelectorAll('.menu-link');
-            menuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    hamburger.classList.remove('active');
-                    mobileMenu.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            });
-
-            document.addEventListener('click', function(event) {
-                if (mobileMenu.classList.contains('active')) {
-                    const isClickInsideMenu = mobileMenu.contains(event.target);
-                    const isClickOnHamburger = hamburger.contains(event.target);
-                    
-                    if (!isClickInsideMenu && !isClickOnHamburger) {
-                        hamburger.classList.remove('active');
-                        mobileMenu.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                }
-            });
         }
+
+        // Cerrar menú al hacer clic en un enlace
+        const menuLinks = document.querySelectorAll('.menu-link');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', function(event) {
+            const isClickInsideMenu = mobileMenu && mobileMenu.contains(event.target);
+            const isClickOnHamburger = hamburger && hamburger.contains(event.target);
+            
+            if (mobileMenu && mobileMenu.classList.contains('active') && !isClickInsideMenu && !isClickOnHamburger) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
     </script>
 </body>
 </html>
