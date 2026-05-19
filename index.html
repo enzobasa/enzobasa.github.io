@@ -21,67 +21,85 @@
             overflow-x: hidden;
         }
 
-        <!-- Menú hamburguesa -->
-    <div class="logo-container">
-    <a href="index.html" class="logo">ENZO</a>
-</div>
-    <div class="menu-container">
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <nav class="mobile-menu" id="mobile-menu">
-            <div class="menu-content">
-                <a href="index.html" class="menu-link">Inicio</a>
-                <a href="sobremi.html" class="menu-link">Sobre mi</a>
-                <a href="proyectos.html" class="menu-link">Proyectos</a>
-                <a href="contacto.html" class="menu-link">Contacto</a>
-                <div class="menu-social">
-                    <a href="#" target="_blank">Instagram</a>
-                    <a href="#" target="_blank">YouTube</a>
-                </div>
-                <div class="menu-lang">
-                    <a href="index.html" class="active">Esp</a>
-                    <span>/</span>
-                    <a href="en/index.html">Eng</a>
-                </div>
-            </div>
-        </nav>
-    </div>
+        /* ===== MENÚ HAMBURGUESA - PANTALLA COMPLETA ===== */
+        .menu-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2000;
+        }
 
+        .hamburger {
+            width: 35px;
+            height: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 2001;
+            position: relative;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 8px;
+            border-radius: 8px;
+        }
 
+        .hamburger span {
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* Animación de la X cuando está activo */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Menú de PANTALLA COMPLETA */
         .mobile-menu {
             position: fixed;
             top: 0;
-            right: -100%;
-            width: 280px;
+            left: 0;
+            width: 100%;
             height: 100vh;
-            background-color: rgba(0, 0, 0, 0.95);
-            transition: right 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.98);
+            transition: all 0.4s ease;
             z-index: 1999;
             display: flex;
             align-items: center;
             justify-content: center;
+            opacity: 0;
+            visibility: hidden;
             backdrop-filter: blur(10px);
         }
 
         .mobile-menu.active {
-            right: 0;
+            opacity: 1;
+            visibility: visible;
         }
 
         .menu-content {
             text-align: center;
             display: flex;
             flex-direction: column;
-            gap: 1.8rem;
+            gap: 2rem;
             padding: 2rem;
         }
 
         .menu-link {
             color: white;
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 500;
             transition: opacity 0.3s;
             padding: 0.5rem;
@@ -95,29 +113,35 @@
             display: flex;
             gap: 1.5rem;
             justify-content: center;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         .menu-social a {
             color: white;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .menu-lang {
             display: flex;
-            gap: 0.3rem;
+            gap: 0.5rem;
             justify-content: center;
+            margin-top: 1rem;
         }
 
         .menu-lang a {
             color: white;
             text-decoration: none;
+            font-size: 1rem;
         }
 
         .menu-lang a.active {
             opacity: 1;
             font-weight: bold;
+        }
+
+        .menu-lang span {
+            color: white;
         }
 
         /* ===== HERO SECTION ===== */
@@ -316,7 +340,7 @@
             }
             
             .menu-link {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
             }
             
             .hero-content h1 {
@@ -335,7 +359,7 @@
     </style>
 </head>
 <body>
-    <!-- Menú hamburguesa (SIN LOGO en index.html, pero mismo estilo que Sobre mi) -->
+    <!-- Menú hamburguesa (SIN LOGO en index.html, PANTALLA COMPLETA) -->
     <div class="menu-container">
         <div class="hamburger" id="hamburger">
             <span></span>
