@@ -619,3 +619,41 @@ footer {
         height: 200px;
     }
 }
+/* ===== LOGO EN ESQUINA SUPERIOR IZQUIERDA ===== */
+.logo-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2000;
+}
+
+.logo {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: white;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 15px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.1rem;
+        padding: 6px 12px;
+    }
+    
+    .logo-container {
+        top: 15px;
+        left: 15px;
+    }
+}
