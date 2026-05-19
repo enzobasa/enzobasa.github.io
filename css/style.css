@@ -400,6 +400,7 @@ footer {
     color: #cccccc;
     text-align: justify;
 }
+}
 
 .sobremi-texto ul {
     margin: 20px 0;
@@ -657,4 +658,9 @@ footer {
         top: 15px;
         left: 15px;
     }
+}
+
+/* ===== JUSTIFICAR TEXTO EN SOBRE MÍ ===== */
+.sobremi-texto p {
+    text-align: justify !important;
 }
