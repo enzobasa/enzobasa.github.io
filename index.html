@@ -21,7 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* ===== MENÚ HAMBURGUESA ===== */
+        /* ===== MENÚ HAMBURGUESA - PANTALLA COMPLETA ===== */
         .menu-container {
             position: fixed;
             top: 20px;
@@ -30,8 +30,8 @@
         }
 
         .hamburger {
-            width: 35px;
-            height: 28px;
+            width: 40px;
+            height: 30px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -45,15 +45,15 @@
 
         .hamburger span {
             width: 100%;
-            height: 2px;
+            height: 3px;
             background-color: white;
             transition: all 0.3s ease;
-            border-radius: 2px;
+            border-radius: 3px;
         }
 
-        /* Animación de la X (cuando está activo) */
+        /* Animación de la X cuando está activo */
         .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
+            transform: rotate(45deg) translate(8px, 8px);
         }
 
         .hamburger.active span:nth-child(2) {
@@ -62,40 +62,44 @@
         }
 
         .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
+            transform: rotate(-45deg) translate(8px, -8px);
         }
 
+        /* Menú de pantalla completa */
         .mobile-menu {
             position: fixed;
             top: 0;
-            right: -100%;
-            width: 280px;
+            left: 0;
+            width: 100%;
             height: 100vh;
-            background-color: rgba(0, 0, 0, 0.95);
-            transition: right 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.98);
+            transition: all 0.4s ease;
             z-index: 1999;
             display: flex;
             align-items: center;
             justify-content: center;
+            opacity: 0;
+            visibility: hidden;
             backdrop-filter: blur(10px);
         }
 
         .mobile-menu.active {
-            right: 0;
+            opacity: 1;
+            visibility: visible;
         }
 
         .menu-content {
             text-align: center;
             display: flex;
             flex-direction: column;
-            gap: 1.8rem;
+            gap: 2rem;
             padding: 2rem;
         }
 
         .menu-link {
             color: white;
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 500;
             transition: opacity 0.3s;
             padding: 0.5rem;
@@ -109,29 +113,35 @@
             display: flex;
             gap: 1.5rem;
             justify-content: center;
-            margin-top: 1rem;
+            margin-top: 2rem;
         }
 
         .menu-social a {
             color: white;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .menu-lang {
             display: flex;
-            gap: 0.3rem;
+            gap: 0.5rem;
             justify-content: center;
+            margin-top: 1rem;
         }
 
         .menu-lang a {
             color: white;
             text-decoration: none;
+            font-size: 1rem;
         }
 
         .menu-lang a.active {
             opacity: 1;
             font-weight: bold;
+        }
+
+        .menu-lang span {
+            color: white;
         }
 
         /* ===== HERO SECTION ===== */
@@ -167,17 +177,16 @@
         }
 
         .hero-content h1 {
-            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-size: clamp(2rem, 6vw, 5rem);
             font-weight: 700;
             letter-spacing: 0.1em;
             margin-bottom: 1rem;
         }
 
         .hero-content p {
-            font-size: clamp(0.9rem, 3vw, 1.2rem);
+            font-size: clamp(0.8rem, 3vw, 1.2rem);
             opacity: 0.9;
             letter-spacing: 0.05em;
-            line-height: 1.4;
         }
 
         /* ===== PROYECTO DESTACADO ===== */
@@ -306,25 +315,6 @@
         }
 
         /* ===== RESPONSIVE ===== */
-        @media (min-width: 769px) {
-            .hamburger {
-                width: 40px;
-                height: 30px;
-            }
-            
-            .hamburger span {
-                height: 3px;
-            }
-            
-            .menu-link {
-                font-size: 1.8rem;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-        }
-
         @media (max-width: 768px) {
             .menu-container {
                 top: 15px;
@@ -332,38 +322,44 @@
             }
             
             .hamburger {
-                width: 30px;
+                width: 32px;
                 height: 24px;
                 padding: 6px;
             }
             
+            .hamburger span {
+                height: 2px;
+            }
+            
             .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
+                transform: rotate(45deg) translate(6px, 6px);
             }
             
             .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -5px);
+                transform: rotate(-45deg) translate(6px, -6px);
             }
             
             .menu-link {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
             }
             
             .hero-content h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .section-title {
-                font-size: 1.4rem;
-            }
-            
-            .project-card h3 {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
             }
             
             .email-link {
                 font-size: 0.9rem;
                 word-break: break-all;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .menu-link {
+                font-size: 2.2rem;
             }
         }
     </style>
