@@ -4,78 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyectos - Enzo Basañez</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html">ENZO</a>
-            </div>
-            <button class="hamburguesa" id="hamburguesa" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="menu-desplegable" id="menu-desplegable">
-                <ul class="menu-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="sobremi.html">Sobre mi</a></li>
-                    <li><a href="proyectos.html">Proyectos</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-                <div class="menu-item">
-                    <label>Idioma:</label>
-                    <select id="idioma-movil">
-                        <option value="es">Español</option>
-                        <option value="eu">Euskara</option>
-                        <option value="en">English</option>
-                    </select>
+    <!-- Menú hamburguesa -->
+    <div class="menu-container">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="mobile-menu" id="mobile-menu">
+            <div class="menu-content">
+                <a href="index.html" class="menu-link">Inicio</a>
+                <a href="sobremi.html" class="menu-link">Sobre mi</a>
+                <a href="proyectos.html" class="menu-link">Proyectos</a>
+                <a href="contacto.html" class="menu-link">Contacto</a>
+                <div class="menu-social">
+                    <a href="#" target="_blank">Instagram</a>
+                    <a href="#" target="_blank">YouTube</a>
                 </div>
-                <div class="menu-item">
-                    <span>Tema:</span>
-                    <button id="cambiar-tema-movil"><i class="fas fa-moon"></i></button>
-                </div>
-                <div class="menu-item redes-menu">
-                    <span>Redes:</span>
-                    <div class="redes-iconos">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+                <div class="menu-lang">
+                    <a href="index.html" class="active">Esp</a>
+                    <span>/</span>
+                    <a href="en/index.html">Eng</a>
                 </div>
             </div>
         </nav>
-    </header>
+    </div>
 
-    <!-- PÁGINA DE PROYECTOS (TODOS) -->
+    <!-- PÁGINA DE TODOS LOS PROYECTOS -->
     <main class="pagina-proyectos">
-        <h1>Todos mis proyectos</h1>
+        <h1 class="page-title">MIS PROYECTOS</h1>
+        
         <div class="grid-proyectos">
-            <!-- Proyecto 1 -->
-            <a href="proyecto1.html" class="proyecto-card">
-                <img src="images/proyecto1.jpg" alt="Birjaio">
+            <!-- PROYECTO 1 - Birjaio -->
+            <div class="proyecto-card" onclick="location.href='proyecto1.html'">
+                <img src="/images/proyecto1.jpg" alt="Birjaio">
                 <h3>Birjaio</h3>
                 <p>Documental</p>
-            </a>
-            <!-- Proyecto 2 -->
-            <a href="#" class="proyecto-card">
-                <img src="images/proyecto2.jpg" alt="Proyecto 2">
+            </div>
+
+            <!-- PROYECTO 2 -->
+            <div class="proyecto-card" onclick="location.href='#'">
+                <img src="/images/proyecto2.jpg" alt="Proyecto 2">
                 <h3>Test Proyecto 1</h3>
                 <p>Ficción</p>
-            </a>
-            <!-- Proyecto 3 -->
-            <a href="#" class="proyecto-card">
-                <img src="images/proyecto3.jpg" alt="Proyecto 3">
+            </div>
+
+            <!-- PROYECTO 3 -->
+            <div class="proyecto-card" onclick="location.href='#'">
+                <img src="/images/proyecto3.jpg" alt="Proyecto 3">
                 <h3>Cat2ES</h3>
                 <p>Experimental</p>
-            </a>
-            <!-- AÑADE MÁS PROYECTOS COPIANDO ESTE FORMATO -->
+            </div>
+
+            <!-- PROYECTO 4 - AÑADE MÁS COPIANDO ESTE FORMATO -->
+            <div class="proyecto-card" onclick="location.href='#'">
+                <img src="/images/proyecto4.jpg" alt="Proyecto 4">
+                <h3>Nombre del Proyecto</h3>
+                <p>Género</p>
+            </div>
         </div>
     </main>
 
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
