@@ -6,12 +6,48 @@
     <title>Proyectos - ENZO</title>
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos para los botones de filtro */
+        .filtros-container {
+            text-align: center;
+            margin: 40px auto 50px auto;
+        }
+        .filtro-boton {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #cccccc;
+            padding: 8px 20px;
+            margin: 5px 8px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .filtro-boton:hover {
+            border-color: white;
+            color: white;
+        }
+        .filtro-boton.activo {
+            background: white;
+            color: black;
+            border-color: white;
+            font-weight: 500;
+        }
+        /* Clase para ocultar proyectos */
+        .proyecto-card.oculto {
+            display: none;
+        }
+        .grid-proyectos {
+            transition: all 0.2s ease;
+        }
+    </style>
 </head>
 <body>
     <!-- Menú hamburguesa -->
     <div class="logo-container">
-    <a href="index.html" class="logo">ENZO</a>
-</div>
+        <a href="index.html" class="logo">ENZO</a>
+    </div>
     <div class="menu-container">
         <div class="hamburger" id="hamburger">
             <span></span>
@@ -41,53 +77,105 @@
     <main class="pagina-proyectos">
         <h1 class="page-title">MIS PROYECTOS</h1>
         
+        <!-- ===== BOTONES DE CATEGORÍAS ===== -->
+        <div class="filtros-container">
+            <button class="filtro-boton activo" data-filtro="todos">Todos</button>
+            <button class="filtro-boton" data-filtro="cortometraje">🎬 Cortometrajes</button>
+            <button class="filtro-boton" data-filtro="documental">🎥 Documentales</button>
+            <button class="filtro-boton" data-filtro="directo">🎤 En Directo</button>
+        </div>
+        
         <div class="grid-proyectos">
-            <!-- PROYECTO 1 - Birjaio -->
-            <div class="proyecto-card" onclick="location.href='proyectos/Birjaio.html'">
+            <!-- PROYECTO 1 - Birjaio (DOCUMENTAL) -->
+            <div class="proyecto-card" data-categoria="documental" onclick="location.href='proyectos/Birjaio.html'">
                 <img src="/images/Birjaio_Miniatura.jpg" alt="Birjaio">
                 <h3>BIRJAIO</h3>
                 <p>Documental</p>
             </div>
 
-            <!-- PROYECTO 2 - El Robo del Siglo-->
-            <div class="proyecto-card" onclick="location.href='proyectos/ElRoboDelSiglo.html'">
+            <!-- PROYECTO 2 - El Robo del Siglo (CORTOMETRAJE) -->
+            <div class="proyecto-card" data-categoria="cortometraje" onclick="location.href='proyectos/ElRoboDelSiglo.html'">
                 <img src="/images/ELRoboDelSiglo_Miniatura.jpg" alt="El Robo Del Siglo">
                 <h3>EL ROBO DEL SIGLO</h3>
                 <p>Cortometraje</p>
             </div>
 
-            <!-- PROYECTO 3 - Una Ciudad... Sostenible-->
-            <div class="proyecto-card" onclick="location.href='proyectos/UnaCiudad...Sostenible.html'">
+            <!-- PROYECTO 3 - Una Ciudad... Sostenible (CORTOMETRAJE) -->
+            <div class="proyecto-card" data-categoria="cortometraje" onclick="location.href='proyectos/UnaCiudad...Sostenible.html'">
                 <img src="/images/UnaCiudad...Sostenible_Miniatura.jpg" alt="Una Ciudad... Sostenible">
                 <h3>UNA CIUDAD... SOSTENIBLE</h3>
                 <p>Cortometraje</p>
             </div>
 
-            <!-- PROYECTO 4 - Mort Art-->
-            <div class="proyecto-card" onclick="location.href='proyectos/Mort Art.html'">
+            <!-- PROYECTO 4 - Mort Art (CORTOMETRAJE) -->
+            <div class="proyecto-card" data-categoria="cortometraje" onclick="location.href='proyectos/Mort%20Art.html'">
                 <img src="/images/Mort Art_Miniatura.jpg" alt="Mort Art">
                 <h3>MORT ART</h3>
                 <p>Cortometraje</p>
             </div>
             
-            <!-- PROYECTO 5 - Bera Bezala-->
-            <div class="proyecto-card" onclick="location.href='proyectos/BeraBezala.html'">
+            <!-- PROYECTO 5 - Bera Bezala (CORTOMETRAJE) -->
+            <div class="proyecto-card" data-categoria="cortometraje" onclick="location.href='proyectos/BeraBezala.html'">
                 <img src="/images/BeraBezala_Miniatura.jpg" alt="Bera Bezala">
                 <h3>BERA BEZALA</h3>
                 <p>Cortometraje</p>
             </div>
+
+            <!-- ===== AÑADE AQUÍ NUEVOS PROYECTOS ===== -->
+            <!-- EJEMPLO DE PROYECTO "EN DIRECTO" -->
+            <!--
+            <div class="proyecto-card" data-categoria="directo" onclick="location.href='proyectos/Concierto.html'">
+                <img src="/images/concierto.jpg" alt="Concierto">
+                <h3>GRAN CONCIERTO</h3>
+                <p>En Directo</p>
+            </div>
+            -->
         </div>
     </main>
 
     <script src="/js/main.js"></script>
-</body>
-</html>
-<footer>
+    <script>
+        // ===== LÓGICA DE FILTRADO POR CATEGORÍAS =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Seleccionamos todos los botones y todos los proyectos
+            const botonesFiltro = document.querySelectorAll('.filtro-boton');
+            const todosLosProyectos = document.querySelectorAll('.proyecto-card');
+
+            // 2. Añadimos un evento 'click' a cada botón
+            botonesFiltro.forEach(boton => {
+                boton.addEventListener('click', function() {
+                    // 3. Obtenemos el valor de categoría del botón (data-filtro)
+                    const filtroSeleccionado = this.getAttribute('data-filtro');
+                    
+                    // 4. (Opcional) Cambiamos la clase 'activo' de los botones para estilos visuales
+                    botonesFiltro.forEach(btn => btn.classList.remove('activo'));
+                    this.classList.add('activo');
+
+                    // 5. Recorremos todos los proyectos y decidimos si mostrarlos u ocultarlos
+                    todosLosProyectos.forEach(proyecto => {
+                        // Obtenemos la categoría de cada proyecto (data-categoria)
+                        const categoriaProyecto = proyecto.getAttribute('data-categoria');
+                        
+                        if (filtroSeleccionado === 'todos') {
+                            // Si el filtro es 'todos', mostramos todos los proyectos
+                            proyecto.classList.remove('oculto');
+                        } else {
+                            // Si no, comparamos la categoría del proyecto con el filtro
+                            if (categoriaProyecto === filtroSeleccionado) {
+                                proyecto.classList.remove('oculto'); // Coincide: lo mostramos
+                            } else {
+                                proyecto.classList.add('oculto'); // No coincide: lo ocultamos
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <footer>
         <div class="container">
             <p>&copy; 2026 Enzo B. Todos los derechos reservados.</p>
         </div>
     </footer>
-
-    <script src="/js/main.js"></script>
 </body>
 </html>
