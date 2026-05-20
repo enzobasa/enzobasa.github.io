@@ -86,46 +86,46 @@
         </div>
         
         <div class="grid-proyectos">
-            <!-- PROYECTO 1 - Birjaio (CORTOMETRAJE) -->
+            <!-- PROYECTO 1 - Mort Art (2025) -->
+            <div class="proyecto-card" data-categoria="cortometraje" onclick="location.href='proyectos/Mort%20Art.html'">
+                <img src="/images/Mort Art_Miniatura.jpg" alt="Mort Art">
+                <h3>MORT ART</h3>
+                <p>Cortometraje · 2025</p>
+            </div>
+
+            <!-- PROYECTO 2 - Birjaio (2024) -->
             <div class="proyecto-card" data-categoria="cortometraje" onclick="location.href='proyectos/Birjaio.html'">
                 <img src="/images/Birjaio_Miniatura.jpg" alt="Birjaio">
                 <h3>BIRJAIO</h3>
                 <p>Cortometraje · 2024</p>
             </div>
 
-            <!-- PROYECTO 2 - El Robo del Siglo (CORTOMETRAJE) -->
-            <div class="proyecto-card" data-categoria="cortometraje" onclick="location.href='proyectos/ElRoboDelSiglo.html'">
-                <img src="/images/ELRoboDelSiglo_Miniatura.jpg" alt="El Robo Del Siglo">
-                <h3>EL ROBO DEL SIGLO</h3>
-                <p>Cortometraje · 2022</p>
-            </div>
-
-            <!-- PROYECTO 3 - Una Ciudad... Sostenible (CORTOMETRAJE) -->
-            <div class="proyecto-card" data-categoria="cortometraje" onclick="location.href='proyectos/UnaCiudad...Sostenible.html'">
-                <img src="/images/UnaCiudad...Sostenible_Miniatura.jpg" alt="Una Ciudad... Sostenible">
-                <h3>UNA CIUDAD... SOSTENIBLE</h3>
-                <p>Cortometraje · 2023</p>
-            </div>
-
-            <!-- PROYECTO 4 - Mort Art (CORTOMETRAJE) -->
-            <div class="proyecto-card" data-categoria="cortometraje" onclick="location.href='proyectos/Mort%20Art.html'">
-                <img src="/images/Mort Art_Miniatura.jpg" alt="Mort Art">
-                <h3>MORT ART</h3>
-                <p>Cortometraje · 2025</p>
-            </div>
-            
-            <!-- PROYECTO 5 - Bera Bezala (CORTOMETRAJE) -->
+            <!-- PROYECTO 3 - Bera Bezala (2024) -->
             <div class="proyecto-card" data-categoria="cortometraje" onclick="location.href='proyectos/BeraBezala.html'">
                 <img src="/images/BeraBezala_Miniatura.jpg" alt="Bera Bezala">
                 <h3>BERA BEZALA</h3>
                 <p>Cortometraje · 2024</p>
             </div>
 
-            <!-- PROYECTO 5 - Tartanga Master Championship (TMC) (EN DIRECTO) -->
+            <!-- PROYECTO 4 - Tartanga Master Championship (TMC) (2024) -->
             <div class="proyecto-card" data-categoria="directo" onclick="location.href='proyectos/TartangaMasterChampionship.html'">
                 <img src="/images/TMC_Miniatura.jpg" alt="TartangaMasterChampionship">
                 <h3>TARTANGA MASTER CHAMPIONSHIP (TMC)</h3>
                 <p>En Directo · 2024</p>
+            </div>
+
+            <!-- PROYECTO 5 - Una Ciudad... Sostenible (2023) -->
+            <div class="proyecto-card" data-categoria="cortometraje" onclick="location.href='proyectos/UnaCiudad...Sostenible.html'">
+                <img src="/images/UnaCiudad...Sostenible_Miniatura.jpg" alt="Una Ciudad... Sostenible">
+                <h3>UNA CIUDAD... SOSTENIBLE</h3>
+                <p>Cortometraje · 2023</p>
+            </div>
+
+            <!-- PROYECTO 6 - El Robo del Siglo (2022) -->
+            <div class="proyecto-card" data-categoria="cortometraje" onclick="location.href='proyectos/ElRoboDelSiglo.html'">
+                <img src="/images/ELRoboDelSiglo_Miniatura.jpg" alt="El Robo Del Siglo">
+                <h3>EL ROBO DEL SIGLO</h3>
+                <p>Cortometraje · 2022</p>
             </div>
 
             <!-- ===== AÑADE AQUÍ NUEVOS PROYECTOS ===== -->
@@ -139,8 +139,9 @@
     </footer>
 
     <script src="/js/main.js"></script>
+    
+    <!-- Script de filtrado por categorías -->
     <script>
-        // ===== LÓGICA DE FILTRADO POR CATEGORÍAS =====
         document.addEventListener('DOMContentLoaded', function() {
             const botonesFiltro = document.querySelectorAll('.filtro-boton');
             const todosLosProyectos = document.querySelectorAll('.proyecto-card');
@@ -169,22 +170,25 @@
             });
         });
     </script>
-<script>
-    // Ordenar proyectos por año (de más reciente a más antiguo)
-    document.addEventListener('DOMContentLoaded', function() {
-        const grid = document.querySelector('.grid-proyectos');
-        const proyectos = Array.from(document.querySelectorAll('.proyecto-card'));
-        
-        // Extraer el año del texto y ordenar
-        proyectos.sort((a, b) => {
-            const añoA = parseInt(a.querySelector('p').innerText.match(/\d{4}/) || 0);
-            const añoB = parseInt(b.querySelector('p').innerText.match(/\d{4}/) || 0);
-            return añoB - añoA; // De más reciente a más antiguo
+
+    <!-- Script de orden automático por año (de más nuevo a más antiguo) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const grid = document.querySelector('.grid-proyectos');
+            if (!grid) return;
+            
+            const proyectos = Array.from(document.querySelectorAll('.proyecto-card'));
+            
+            proyectos.sort((a, b) => {
+                const textoA = a.querySelector('p')?.innerText || '';
+                const textoB = b.querySelector('p')?.innerText || '';
+                const añoA = parseInt(textoA.match(/\d{4}/)?.[0] || 0);
+                const añoB = parseInt(textoB.match(/\d{4}/)?.[0] || 0);
+                return añoB - añoA; // Más reciente primero
+            });
+            
+            proyectos.forEach(proyecto => grid.appendChild(proyecto));
         });
-        
-        // Reordenar en el DOM
-        proyectos.forEach(proyecto => grid.appendChild(proyecto));
-    });
-</script>
+    </script>
 </body>
 </html>
