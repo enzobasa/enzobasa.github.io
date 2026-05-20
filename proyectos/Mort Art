@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Robo del Siglo - ENZO</title>
+    <title>Mort Art - ENZO</title>
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -17,13 +17,13 @@
         </div>
         <nav class="mobile-menu" id="mobile-menu">
             <div class="menu-content">
-                <a href="/index.html#inicio" class="menu-link">Inicio</a>
-                <a href="/index.html#proyectos" class="menu-link">Proyectos</a>
-                <a href="/index.html#sobre-mi" class="menu-link">Sobre mi</a>
-                <a href="/index.html#contacto" class="menu-link">Contacto</a>
+                <a href="/index.html" class="menu-link">Inicio</a>
+                <a href="/sobremi.html" class="menu-link">Sobre mi</a>
+                <a href="/proyectos.html" class="menu-link">Proyectos</a>
+                <a href="/contacto.html" class="menu-link">Contacto</a>
                 <div class="menu-social">
-                    <a href="https://www.instagram.com/enzoo.bb/" target="_blank">Instagram</a>
-                    <a href="https://www.youtube.com/@enzobasaa" target="_blank">YouTube</a>
+                    <a href="https://www.instagram.com/enzoo.bg/" target="_blank">Instagram</a>
+                    <a href="https://www.youtube.com/@enzobasa" target="_blank">YouTube</a>
                 </div>
                 <div class="menu-lang">
                     <a href="/index.html" class="active">Esp</a>
@@ -37,40 +37,33 @@
     <main>
         <section class="project-detail">
             <div class="container">
-                <a href="../proyectos.html" class="back-link">← Volver a proyectos</a>
+                <a href="/proyectos.html" class="back-link">← Volver a proyectos</a>
                 
-                <h1 class="project-title">EL ROBO DEL SIGLO</h1>
+                <h1 class="project-title">MORT ART</h1>
                 
                 <div class="project-video">
-                    <!-- https://youtu.be/mXW7vO1KmGo -->
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/mXW7vO1KmGo" frameborder="0" allowfullscreen></iframe>                </div>
+                    <iframe width="100%" height="500" src="https://www.youtube.com/embed/TU_ID_AQUI" frameborder="0" allowfullscreen></iframe>
+                </div>
                 
                 <div class="project-info">
                     <h2>Ficha Técnica</h2>
-                    
                     <ul>
-                        <li><strong>Título:</strong> El Robo del Siglo</li>
-                        <li><strong>Género:</strong> Cortometraje</li>
-                        <li><strong>Duración:</strong> 2:45 minutos</li>
-                        <li><strong>Año:</strong> 2022</li>
+                        <li><strong>Título:</strong> Mort Art</li>
+                        <li><strong>Género:</strong> [FICCIÓN/DOCUMENTAL]</li>
+                        <li><strong>Duración:</strong> X minutos</li>
+                        <li><strong>Año:</strong> 202X</li>
                         <li><strong>Idioma:</strong> Castellano</li>
-                        <li><strong>Sinopsis:</strong> En Bilbao se desata una oleada de robos como parte de un plan que tiene como objetivo culminar en un gran atraco. Un inspector de policía interroga a un sospechoso con la intención de sacarle el plan.</li>
+                        <li><strong>Sinopsis:</strong>
+                            <p>Aquí va la sinopsis del proyecto Mort Art.</p>
+                        </li>
+                    </ul>
 
                     <h2>Equipo Técnico</h2>
-                   
+                    <ul>
+                        <li><strong>Director:</strong> Nombre</li>
+                        <li><strong>Productor:</strong> Enzo Basañez</li>
+                        <li><strong>Editor:</strong> Enzo Basañez</li>
                     </ul>
-                   <li><strong>Idea original:</strong> Kar Gaztelu, Enzo Basañez, June Oscoz, Liam Urigüen, Sendoa Zubizarreta, Iñigo Zulueta</li>
-                   <li><strong>Script:</strong> Enzo Basañez</li>
-                   <li><strong>Operadores de cámara:</strong> June Oscoz, Iñigo Zulueta</li>
-                   <li><strong>Operador de audio:</strong> Iñigo Zulueta, Sendoa Zubizarreta, Liam Urigüen</li>
-                   <li><strong>Gaffer:</strong> June Oscoz</li>
-                   <li><strong>Editor:</strong> Iñigo Zulueta</li>
-                   <li><strong>Casting:</strong> Kar Gaztelu, Enzo Basañez, Sendoa Zubizarreta, June Oscoz, Liam Urigüen</li>
-                    <p><em>Ladrones:</em> Enzo Basañez, Kar Gaztelu</p>
-                    <p><em>Policía:</em> Sendoa Zubizarreta</p>
-                    <p><em>Cómplices:</em> June Oscoz, Liam Urigüen</p>
-
-                   
                 </div>
             </div>
         </section>
@@ -78,7 +71,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Enzo B. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Enzo B. Todos los derechos reservados.</p>
         </div>
     </footer>
 
