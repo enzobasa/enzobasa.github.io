@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una Ciudadñ... Sostenible - ENZO</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Menú hamburguesa -->
+    <div class="menu-container">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="mobile-menu" id="mobile-menu">
+            <div class="menu-content">
+                <a href="/index.html#inicio" class="menu-link">Inicio</a>
+                <a href="/index.html#proyectos" class="menu-link">Proyectos</a>
+                <a href="/index.html#sobre-mi" class="menu-link">Sobre mi</a>
+                <a href="/index.html#contacto" class="menu-link">Contacto</a>
+                <div class="menu-social">
+                    <a href="https://www.instagram.com/enzoo.bb/" target="_blank">Instagram</a>
+                    <a href="https://www.youtube.com/@enzobasaa" target="_blank">YouTube</a>
+                </div>
+                <div class="menu-lang">
+                    <a href="/index.html" class="active">Esp</a>
+                    <span>/</span>
+                    <a href="/en/index.html">Eng</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <section class="project-detail">
+            <div class="container">
+                <a href="../proyectos.html" class="back-link">← Volver a proyectos</a>
+                
+                <h1 class="project-title">UNA CIUDAD... SOSTENIBLE</h1>
+                
+                <div class="project-video">
+                    <!-- https://youtu.be/0ZuC6wGKEt4 -->
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/0ZuC6wGKEt4" frameborder="0" allowfullscreen></iframe>                </div>
+                
+                <div class="project-info">
+                    <h2>Ficha Técnica</h2>
+                    
+                    <ul>
+                        <li><strong>Título:</strong> Una Ciudad... Sostenible</li>
+                        <li><strong>Género:</strong> Cortometraje</li>
+                        <li><strong>Duración:</strong> 3:47 minutos</li>
+                        <li><strong>Año:</strong> 2023</li>
+                        <li><strong>Idioma:</strong> Castellano</li>
+                        <li><strong>Sinopsis:</strong> Nuestro alcalde busca (y encuentra) una solución peculiar para hacer de Bilbao una ciudad sostenible.</li>
+
+                    <h2>Equipo Técnico</h2>
+                   
+                    </ul>
+                   <li><strong>Idea original:</strong> Nahia Arzamendi, Enzo Basañez, Enara Castaño, Kar Gaztelu, Iraia Mendoza, Liam Urigüen, Iñigo Zulueta</li>
+                   <li><strong>Director:</strong> Nahia Arzamendi, Liam Urigüen</li>
+                   <li><strong>Operadores de cámara:</strong> Nahia Arzamendi, Liam Urigüen</li>
+                   <li><strong>Operadores de sonido:</strong> Enara Castaño, Iraia Mendoza, Kar Gaztelu</li>
+                   <li><strong>Gaffer:</strong> Nahia Arzamendi, Iñigo Zulueta</li>
+                   <li><strong>Caracterización:</strong> Nahia Arzamendi</li>
+                   <li><strong>Editor:</strong> Liam Urigüen, Iñigo Zulueta</li>
+                   <li><strong>Casting:</strong> Iñigo Zulueta, Enzo Basañez, kar Gaztelu, Iraia Mendoza, Enara Castaño</li>
+
+                   
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Enzo B. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
