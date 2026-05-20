@@ -24,6 +24,16 @@
     font-size: 0.9rem;
     transition: all 0.3s ease;
 }
+        .filtro-boton:hover {
+            border-color: white;
+            color: white;
+        }
+        .filtro-boton.activo {
+            background: white;
+            color: black;
+            border-color: white;
+            font-weight: 500;
+        }
         /* Clase para ocultar proyectos */
         .proyecto-card.oculto {
             display: none;
@@ -70,17 +80,17 @@
         <!-- ===== BOTONES DE CATEGORÍAS ===== -->
         <div class="filtros-container">
             <button class="filtro-boton activo" data-filtro="todos">Todos</button>
-            <button class="filtro-boton" data-filtro="cortometraje"> Cortometrajes</button>
-            <button class="filtro-boton" data-filtro="documental"> Documentales</button>
-            <button class="filtro-boton" data-filtro="directo"> En Directo</button>
+            <button class="filtro-boton" data-filtro="cortometraje">🎬 Cortometrajes</button>
+            <button class="filtro-boton" data-filtro="documental">🎥 Documentales</button>
+            <button class="filtro-boton" data-filtro="directo">🎤 En Directo</button>
         </div>
         
         <div class="grid-proyectos">
-            <!-- PROYECTO 1 - Birjaio (CORTOMETRAJE) -->
+            <!-- PROYECTO 1 - Birjaio (DOCUMENTAL) -->
             <div class="proyecto-card" data-categoria="documental" onclick="location.href='proyectos/Birjaio.html'">
                 <img src="/images/Birjaio_Miniatura.jpg" alt="Birjaio">
                 <h3>BIRJAIO</h3>
-                <p>Cortometraje</p>
+                <p>Documental</p>
             </div>
 
             <!-- PROYECTO 2 - El Robo del Siglo (CORTOMETRAJE) -->
