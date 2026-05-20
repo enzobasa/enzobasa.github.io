@@ -162,5 +162,22 @@
             });
         });
     </script>
+<script>
+    // Ordenar proyectos por año (de más reciente a más antiguo)
+    document.addEventListener('DOMContentLoaded', function() {
+        const grid = document.querySelector('.grid-proyectos');
+        const proyectos = Array.from(document.querySelectorAll('.proyecto-card'));
+        
+        // Extraer el año del texto y ordenar
+        proyectos.sort((a, b) => {
+            const añoA = parseInt(a.querySelector('p').innerText.match(/\d{4}/) || 0);
+            const añoB = parseInt(b.querySelector('p').innerText.match(/\d{4}/) || 0);
+            return añoB - añoA; // De más reciente a más antiguo
+        });
+        
+        // Reordenar en el DOM
+        proyectos.forEach(proyecto => grid.appendChild(proyecto));
+    });
+</script>
 </body>
 </html>
