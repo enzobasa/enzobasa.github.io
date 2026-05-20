@@ -6,9 +6,71 @@
     <title>GURE! Jaialdia 2024 - ENZO</title>
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para esta página */
+        .roles-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+        }
+        
+        .rol-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #cccccc;
+            transition: all 0.3s ease;
+        }
+        
+        .rol-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: white;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .sinopsis-centrada {
+            text-align: center;
+            font-style: italic;
+            max-width: 800px;
+            margin: 40px auto 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #cccccc;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .project-detail .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 120px 20px 60px;
+        }
+        
+        .project-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-video {
+            margin: 30px 0;
+        }
+        
+        .project-video iframe {
+            border-radius: 12px;
+        }
+    </style>
 </head>
 <body>
     <!-- Menú hamburguesa -->
+    <div class="logo-container">
+        <a href="index.html" class="logo">ENZO</a>
+    </div>
     <div class="menu-container">
         <div class="hamburger" id="hamburger">
             <span></span>
@@ -17,18 +79,18 @@
         </div>
         <nav class="mobile-menu" id="mobile-menu">
             <div class="menu-content">
-                <a href="/index.html#inicio" class="menu-link">Inicio</a>
-                <a href="/index.html#proyectos" class="menu-link">Proyectos</a>
-                <a href="/index.html#sobre-mi" class="menu-link">Sobre mi</a>
-                <a href="/index.html#contacto" class="menu-link">Contacto</a>
+                <a href="index.html" class="menu-link">Inicio</a>
+                <a href="sobremi.html" class="menu-link">Sobre mi</a>
+                <a href="proyectos.html" class="menu-link">Proyectos</a>
+                <a href="contacto.html" class="menu-link">Contacto</a>
                 <div class="menu-social">
                     <a href="https://www.instagram.com/enzoo.bb/" target="_blank">Instagram</a>
                     <a href="https://www.youtube.com/@enzobasaa" target="_blank">YouTube</a>
                 </div>
                 <div class="menu-lang">
-                    <a href="/index.html" class="active">Esp</a>
+                    <a href="index.html" class="active">Esp</a>
                     <span>/</span>
-                    <a href="/en/index.html">Eng</a>
+                    <a href="en/index.html">Eng</a>
                 </div>
             </div>
         </nav>
@@ -37,25 +99,26 @@
     <main>
         <section class="project-detail">
             <div class="container">
-                <a href="../proyectos.html" class="back-link">← Volver a proyectos</a>
+                <a href="proyectos.html" class="back-link">← Volver a proyectos</a>
                 
-                <h1 class="project-title">GURE! Jaialdia 2024</h1>
+                <!-- TÍTULO (solo el nombre) -->
+                <h1 class="project-title">GURE! JAIALDIA 2024</h1>
                 
+                <!-- VIDEO DE YOUTUBE -->
                 <div class="project-video">
-                    <!-- https://youtu.be/P6ot9t8AaX8?list=PL_RAiNkS7X0ZklokAaoOW56YgzCv85g7i -->
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/P6ot9t8AaX8?list=PL_RAiNkS7X0ZklokAaoOW56YgzCv85g7i" frameborder="0" allowfullscreen></iframe>                </div>
+                    <iframe width="100%" height="500" src="https://www.youtube.com/embed/P6ot9t8AaX8?list=PL_RAiNkS7X0ZklokAaoOW56YgzCv85g7i" frameborder="0" allowfullscreen></iframe>
+                </div>
                 
-                <div class="project-info">
-                    <h2>Ficha Técnica</h2>
-                    
-                    <ul>
-                        <li><strong>Título:</strong> GURE! Jaialdia</li>
-                        <li><strong>Rol:</strong> Realizador de pantallas en directo y operador de cámara</li>
-                        <li><strong>Año:</strong> 2024</li>
-                        <li><strong>Idioma:</strong> Euskara</li>
-                        <li><strong>Sinopsis:</strong> GURE! Jaialdia es un festival cultural y multidisciplinar, gratuito y abierto al público, organizado íntegramente por el alumnado del ciclo de Producción de Audiovisuales y Espectáculos del CIFP Tartanga LHII de Erandio.</li>
-
-                   
+                <!-- CASILLAS DE ROLES (decoration) -->
+                <div class="roles-container">
+                    <span class="rol-card">Realizador de pantallas en directo</span>
+                    <span class="rol-card">Operador de cámara</span>
+                </div>
+                
+                <!-- SINOPSIS EN CURSIVA Y CENTRADA -->
+                <div class="sinopsis-centrada">
+                    <p>GURE! Jaialdia 2024 - Aftermovie Ofiziala</p>
+                    <p>GURE! Jaialdia es un festival multidisciplinar, cultural y gratuito que se celebra en Erandio, organizado por el alumnado de Producción de Audiovisuales y Espectáculos del CIFP Tartanga LHII. Combina conciertos, teatro, talleres y concursos, actuando como un proyecto de aprendizaje práctico para los estudiantes.</p>
                 </div>
             </div>
         </section>
@@ -63,10 +126,36 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Enzo B. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Enzo B. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script src="/js/main.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (hamburger && mobileMenu) {
+            hamburger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                hamburger.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                if (mobileMenu.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            });
+
+            const menuLinks = document.querySelectorAll('.menu-link');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
 </body>
 </html>
