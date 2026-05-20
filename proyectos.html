@@ -8,32 +8,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Estilos para los botones de filtro */
-        .filtros-container {
-            text-align: center;
-            margin: 40px auto 50px auto;
-        }
-        .filtro-boton {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #cccccc;
-            padding: 8px 20px;
-            margin: 5px 8px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        .filtro-boton:hover {
-            border-color: white;
-            color: white;
-        }
-        .filtro-boton.activo {
-            background: white;
-            color: black;
-            border-color: white;
-            font-weight: 500;
-        }
+.filtros-container {
+    text-align: center;
+    margin: 0px auto 30px auto;  /* ← CAMBIADO: menos espacio arriba y abajo */
+}
+.filtro-boton {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #cccccc;
+    padding: 8px 20px;
+    margin: 5px 8px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
         /* Clase para ocultar proyectos */
         .proyecto-card.oculto {
             display: none;
