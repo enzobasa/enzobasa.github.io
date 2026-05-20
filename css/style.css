@@ -664,3 +664,23 @@ footer {
 .sobremi-texto p {
     text-align: justify !important;
 }
+
+/* ===== CATEGORÍAS ===== */
+.categoria-titulo {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 50px 0 25px 0;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    border-left: 4px solid #ffffff;
+    padding-left: 15px;
+}
+
+.categoria-titulo:first-of-type {
+    margin-top: 0;
+}
+
+/* Espacio entre categorías */
+.grid-proyectos {
+    margin-bottom: 40px;
+}
